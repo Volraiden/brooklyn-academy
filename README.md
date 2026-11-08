@@ -1,9 +1,9 @@
 # Brooklyn Academy
 
-Landing page for Brooklyn Academy. Powered by UniGoal.
+Landing page for Brooklyn Academy. Powered by [UniGoal](https://unigoal-flax.vercel.app/).
 
 - Join: +998 98 367 27 37
-- Support: +998 88 075 40 10
+- Technical Support: +998 88 075 40 10
 
 ## Deploy to Netlify
 
