@@ -157,18 +157,19 @@
       <div class="ug-inner">
         <div class="ug-copy">
           <p class="kicker light reveal">Powered by</p>
-          <span class="ug-badge reveal"><img src="assets/unigoal-logo.png" alt="UniGoal" width="256" height="66" /></span>
-          <h2 class="reveal">Your plan, your study,<br /><em>your next step.</em></h2>
+          <img class="ug-logo reveal" src="assets/unigoal-logo-light.png" alt="UniGoal" width="256" height="66" />
+          <h2 class="reveal">Homework, study<br /><em>and your next step.</em></h2>
           <p class="ug-lead reveal">
             UniGoal is the learning platform behind Brooklyn Academy. It brings your education,
             study plans, university applications and next steps into one place — with
             <strong>Kiko</strong>, a personal AI guide, by your side.
           </p>
           <ul class="ug-list">
-            <li class="reveal"><b>Plan</b> Tasks, calendar and focus sessions tied to what is due next.</li>
-            <li class="reveal" style="--d:.08s"><b>Discover</b> Search, compare and save universities that fit your goals.</li>
-            <li class="reveal" style="--d:.16s"><b>Ask Kiko</b> An AI guide for majors, applications, study and careers.</li>
-            <li class="reveal" style="--d:.24s"><b>Progress</b> Earn XP, keep your streak and unlock badges as you learn.</li>
+            <li class="reveal ug-hw"><b>Homework &amp; assignments</b> Brooklyn teachers set homework and assignments in UniGoal. Students complete and submit them there, and see their grades and feedback when they are marked.</li>
+            <li class="reveal" style="--d:.08s"><b>Plan</b> Tasks, calendar and focus sessions tied to what is due next.</li>
+            <li class="reveal" style="--d:.16s"><b>Ask Kiko</b> An AI guide for study, majors, applications and careers.</li>
+            <li class="reveal" style="--d:.24s"><b>Discover</b> Search, compare and save universities that fit your goals.</li>
+            <li class="reveal" style="--d:.32s"><b>Progress</b> Earn XP, keep your streak and unlock badges as you learn.</li>
           </ul>
           <a class="btn btn-ug reveal" href="https://unigoal-flax.vercel.app/" target="_blank" rel="noopener">
             Open UniGoal <span aria-hidden="true">↗</span>
@@ -183,8 +184,9 @@
           </div>
           <div class="proto-body">
             <aside class="proto-side">
-              <span class="side-logo"><img src="assets/unigoal-logo.png" alt="" /></span>
+              <img class="side-logo" src="assets/unigoal-logo-light.png" alt="" width="256" height="66" />
               <button class="ptab active" data-tab="home">Home</button>
+              <button class="ptab" data-tab="hw">Homework</button>
               <button class="ptab" data-tab="kiko">Kiko</button>
               <button class="ptab" data-tab="uni">Universities</button>
             </aside>
@@ -207,6 +209,29 @@
                   <li><span class="chk on"></span>Calculus homework</li>
                   <li><span class="chk"></span>English vocabulary</li>
                 </ul>
+              </div>
+              <!-- Homework -->
+              <div class="pview" data-view="hw">
+                <p class="p-hello">Homework <span class="pill">Brooklyn Academy</span></p>
+                <p class="p-sub">Assignments from your teachers, all in one place.</p>
+                <div class="hw">
+                  <div class="hw-row">
+                    <span class="chk on"></span>
+                    <div><b>Essay: My future university</b><small>English · Submitted</small></div>
+                    <span class="tag graded">9 / 10</span>
+                  </div>
+                  <div class="hw-row">
+                    <span class="chk on"></span>
+                    <div><b>Algebra worksheet 4</b><small>Maths · Submitted today</small></div>
+                    <span class="tag sent">Submitted</span>
+                  </div>
+                  <div class="hw-row">
+                    <span class="chk"></span>
+                    <div><b>Vocabulary unit 7</b><small>English · Due tomorrow</small></div>
+                    <span class="tag due">Due</span>
+                  </div>
+                </div>
+                <div class="hw-submit"><span class="upl">↑</span> Upload your work and submit</div>
               </div>
               <!-- Kiko -->
               <div class="pview" data-view="kiko">
