@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Brooklyn Academy</title>
+  <meta name="description" content="Brooklyn Academy — your bridge to the future. Call +998 98 367 27 37 to join." />
+  <meta name="theme-color" content="#efe8df" />
+  <meta property="og:title" content="Brooklyn Academy" />
+  <meta property="og:description" content="Your bridge to the future. Call +998 98 367 27 37 to join." />
+  <meta property="og:image" content="assets/brooklyn-logo.jpg" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="#top" aria-label="Brooklyn Academy home">
+      <img src="assets/brooklyn-logo.jpg" alt="" width="40" height="40" />
+      <span>Brooklyn <em>Academy</em></span>
+    </a>
+    <a class="btn btn-ghost btn-sm" href="tel:+998983672737">Call to join</a>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-logo" aria-hidden="true">
+        <svg class="ring" viewBox="0 0 200 200">
+          <circle cx="100" cy="100" r="96" />
+        </svg>
+        <img src="assets/brooklyn-logo.jpg" alt="Brooklyn Academy logo" width="360" height="360" />
+      </div>
+
+      <p class="eyebrow reveal-load" style="--d:.35s">Brooklyn Academy</p>
+      <h1 class="reveal-load" style="--d:.5s">
+        Your bridge<br /><em>to the future.</em>
+      </h1>
+      <p class="lead reveal-load" style="--d:.65s">
+        Learn with purpose. Grow with confidence.<br class="hide-sm" />
+        One call is all it takes to begin.
+      </p>
+      <div class="cta reveal-load" style="--d:.8s">
+        <a class="btn btn-gold" href="tel:+998983672737">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+          +998 98 367 27 37
+        </a>
+        <a class="btn btn-ghost" href="#contact">Contact</a>
+      </div>
+
+      <svg class="cables" viewBox="0 0 1200 160" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0 150 Q 300 20 600 70 T 1200 150" />
+        <path d="M0 158 Q 300 40 600 86 T 1200 158" />
+      </svg>
+    </section>
+
+    <section class="pillars">
+      <article class="reveal">
+        <span class="num">01</span>
+        <h3>Focused classes</h3>
+        <p>Clear lessons built around what you actually need to learn.</p>
+      </article>
+      <article class="reveal" style="--d:.1s">
+        <span class="num">02</span>
+        <h3>Personal guidance</h3>
+        <p>Teachers who know your name, your pace and your goals.</p>
+      </article>
+      <article class="reveal" style="--d:.2s">
+        <span class="num">03</span>
+        <h3>Real progress</h3>
+        <p>Step by step, from where you are to where you want to be.</p>
+      </article>
+    </section>
+
+    <section class="contact" id="contact">
+      <h2 class="reveal">Start today.</h2>
+      <div class="cards">
+        <a class="card reveal" href="tel:+998983672737">
+          <span class="label">Join the academy</span>
+          <span class="phone">+998 98 367 27 37</span>
+          <span class="arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="card reveal" style="--d:.1s" href="tel:+998880754010">
+          <span class="label">Support</span>
+          <span class="phone">+998 88 075 40 10</span>
+          <span class="arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="powered reveal">
+      <span class="powered-label">Powered by</span>
+      <div class="unigoal">
+        <img src="assets/unigoal-logo.png" alt="UniGoal" width="256" height="66" />
+        <span class="shine" aria-hidden="true"></span>
+      </div>
+    </div>
+    <p class="copy">© <span id="year"></span> Brooklyn Academy</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.2 });
+    document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+  </script>
+</body>
+</html>
