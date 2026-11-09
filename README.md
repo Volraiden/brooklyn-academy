@@ -5,6 +5,8 @@ Landing page for Brooklyn Academy. Powered by [UniGoal](https://unigoal-flax.ver
 - Join: +998 98 367 27 37
 - Technical Support: +998 88 075 40 10
 
+Available in English, Uzbek (Latin) and Russian. Edit the text in `i18n.js`; the visitor’s choice is remembered in the browser.
+
 ## Deploy to Netlify
 
 Plain static site, no build step.
