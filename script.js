@@ -10,13 +10,10 @@
   }, { threshold: 0.18, rootMargin: '0px 0px -40px 0px' });
   document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
 
-  // Split story text into words; mark key words
-  const keys = ['curious', 'confident', 'bridge', 'foundations,', 'steady', 'goal.'];
+  // Story words are rendered by i18n.js; re-read them when the language changes
   const story = document.getElementById('storyText');
-  story.innerHTML = story.textContent.trim().split(/\s+/).map((w) =>
-    `<span class="w${keys.includes(w.toLowerCase()) ? ' key' : ''}">${w}</span>`
-  ).join(' ');
-  const words = [...story.querySelectorAll('.w')];
+  let words = [...story.querySelectorAll('.w')];
+  window.addEventListener('langchange', () => { words = [...story.querySelectorAll('.w')]; onScroll(); });
 
   const progress = document.getElementById('progress');
   const storySec = document.querySelector('.story');
