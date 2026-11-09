@@ -12,7 +12,7 @@
   <link rel="icon" type="image/png" href="assets/favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&display=swap&subset=cyrillic,latin-ext" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -24,33 +24,40 @@
       <span>Brooklyn <em>Academy</em></span>
     </a>
     <nav class="links" aria-label="Sections">
-      <a href="#about">About</a>
-      <a href="#journey">Journey</a>
+      <a href="#about" data-i18n="nav.about">About</a>
+      <a href="#journey" data-i18n="nav.journey">Journey</a>
       <a href="#unigoal">UniGoal</a>
-      <a href="#contact">Contact</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
     </nav>
-    <a class="btn btn-ghost btn-sm" href="tel:+998983672737">Call to join</a>
+    <div class="nav-right">
+      <div class="lang" role="group" aria-label="Language">
+        <span class="lang-pill" aria-hidden="true"></span>
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="uz" aria-pressed="false">UZ</button>
+        <button type="button" data-lang="ru" aria-pressed="false">RU</button>
+      </div>
+      <a class="btn btn-ghost btn-sm call-btn" href="tel:+998983672737">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+        <span data-i18n="nav.call">Call to join</span>
+      </a>
+    </div>
   </header>
 
   <main id="top">
     <!-- HERO -->
     <section class="hero">
       <div class="hero-logo" aria-hidden="true">
-        <svg class="ring" viewBox="0 0 200 200"><circle cx="100" cy="100" r="96" /></svg>
         <img src="assets/brooklyn-logo.jpg" alt="Brooklyn Academy logo" width="360" height="360" />
       </div>
       <p class="eyebrow reveal-load" style="--d:.35s">Brooklyn Academy</p>
-      <h1 class="reveal-load" style="--d:.5s">Your bridge<br /><em>to the future.</em></h1>
-      <p class="lead reveal-load" style="--d:.65s">
-        Learn with purpose. Grow with confidence.<br class="hide-sm" />
-        One call is all it takes to begin.
-      </p>
+      <h1 class="reveal-load" style="--d:.5s" data-i18n-html="hero.title">Your bridge<br /><em>to the future.</em></h1>
+      <p class="lead reveal-load" style="--d:.65s" data-i18n-html="hero.lead">Learn with purpose. Grow with confidence.<br class="hide-sm" /> One call is all it takes to begin.</p>
       <div class="cta reveal-load" style="--d:.8s">
         <a class="btn btn-gold" href="tel:+998983672737">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
           +998 98 367 27 37
         </a>
-        <a class="btn btn-ghost" href="#about">Discover more</a>
+        <a class="btn btn-ghost" href="#about" data-i18n="hero.more">Discover more</a>
       </div>
       <svg class="cables" viewBox="0 0 1200 160" preserveAspectRatio="none" aria-hidden="true">
         <path d="M0 150 Q 300 20 600 70 T 1200 150" />
@@ -59,66 +66,63 @@
       <a class="scroll-cue reveal-load" style="--d:1.4s" href="#about" aria-label="Scroll down"><span></span></a>
     </section>
 
-    <!-- MARQUEE -->
+    <!-- MARQUEE (filled by i18n.js) -->
     <div class="marquee" aria-hidden="true">
-      <div class="track">
-        <span>Curiosity</span><i>✦</i><span>Discipline</span><i>✦</i><span>Confidence</span><i>✦</i><span>Growth</span><i>✦</i><span>Excellence</span><i>✦</i>
-        <span>Curiosity</span><i>✦</i><span>Discipline</span><i>✦</i><span>Confidence</span><i>✦</i><span>Growth</span><i>✦</i><span>Excellence</span><i>✦</i>
-      </div>
+      <div class="track" id="marquee"></div>
     </div>
 
-    <!-- STORY: words light up while scrolling -->
+    <!-- STORY: words light up while scrolling (filled by i18n.js) -->
     <section class="story" id="about">
       <div class="story-sticky">
-        <p class="kicker">About the academy</p>
-        <p class="story-text" id="storyText">Brooklyn Academy is a place where curious minds become confident ones. We believe great learning is built like a great bridge — on strong foundations, with steady steps, and a clear view of where you are going. Every lesson here connects you to your next goal.</p>
+        <p class="kicker" data-i18n="story.kicker">About the academy</p>
+        <p class="story-text" id="storyText"></p>
       </div>
     </section>
 
     <!-- PILLARS -->
     <section class="pillars-wrap">
       <header class="section-head reveal">
-        <p class="kicker">What you will find here</p>
-        <h2>Everything a learner needs<br /><em>to cross over.</em></h2>
+        <p class="kicker" data-i18n="pillars.kicker">What you will find here</p>
+        <h2 data-i18n-html="pillars.title">Everything a learner needs<br /><em>to cross over.</em></h2>
       </header>
       <div class="pillars">
         <article class="pillar reveal">
           <svg class="icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M6 12c6-3 12-3 18 1 6-4 12-4 18-1v26c-6-3-12-3-18 1-6-4-12-4-18-1z"/><path d="M24 13v26"/></svg>
-          <h3>Focused lessons</h3>
-          <p>Clear, structured classes built around what you actually need to learn — no noise, no wasted time.</p>
+          <h3 data-i18n="p1.t">Focused lessons</h3>
+          <p data-i18n="p1.d">Clear, structured classes built around what you actually need to learn — no noise, no wasted time.</p>
         </article>
         <article class="pillar reveal" style="--d:.1s">
           <svg class="icon" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="16" r="7"/><path d="M10 41c1-8 7-13 14-13s13 5 14 13"/></svg>
-          <h3>Personal attention</h3>
-          <p>Teachers who know your name, your pace and your goals, and who help you when you get stuck.</p>
+          <h3 data-i18n="p2.t">Personal attention</h3>
+          <p data-i18n="p2.d">Teachers who know your name, your pace and your goals, and who help you when you get stuck.</p>
         </article>
         <article class="pillar reveal" style="--d:.2s">
           <svg class="icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M8 40V22M18 40V14M28 40V24M38 40V8"/><path d="M5 40h38"/></svg>
-          <h3>A clear plan</h3>
-          <p>Step by step, from where you are today to where you want to be — with progress you can see.</p>
+          <h3 data-i18n="p3.t">A clear plan</h3>
+          <p data-i18n="p3.d">Step by step, from where you are today to where you want to be — with progress you can see.</p>
         </article>
         <article class="pillar reveal" style="--d:.3s">
           <svg class="icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M4 18 24 9l20 9-20 9z"/><path d="M12 22v10c4 4 20 4 24 0V22"/><path d="M44 18v12"/></svg>
-          <h3>Modern tools</h3>
-          <p>Study plans, deadlines and an AI guide in your pocket, powered by UniGoal.</p>
+          <h3 data-i18n="p4.t">Modern tools</h3>
+          <p data-i18n="p4.d">Study plans, deadlines and an AI guide in your pocket, powered by UniGoal.</p>
         </article>
       </div>
     </section>
 
     <!-- BIG LINES -->
-    <section class="lines" id="lines" aria-label="Learn. Build. Cross over.">
+    <section class="lines" id="lines">
       <div class="lines-sticky">
-        <p class="line" data-i="0">Learn.</p>
-        <p class="line" data-i="1">Build.</p>
-        <p class="line gold" data-i="2">Cross over.</p>
+        <p class="line" data-i18n="lines.1">Learn.</p>
+        <p class="line" data-i18n="lines.2">Build.</p>
+        <p class="line gold" data-i18n="lines.3">Cross over.</p>
       </div>
     </section>
 
     <!-- JOURNEY -->
     <section class="journey" id="journey">
       <header class="section-head reveal">
-        <p class="kicker">Your journey</p>
-        <h2>Four steps from today<br /><em>to your goal.</em></h2>
+        <p class="kicker" data-i18n="journey.kicker">Your journey</p>
+        <h2 data-i18n-html="journey.title">Four steps from today<br /><em>to your goal.</em></h2>
       </header>
       <div class="timeline">
         <svg class="spine" viewBox="0 0 4 1000" preserveAspectRatio="none" aria-hidden="true">
@@ -128,26 +132,26 @@
         <article class="step reveal">
           <span class="dot"></span>
           <span class="num">01</span>
-          <h3>Call us</h3>
-          <p>Ring <a href="tel:+998983672737">+998 98 367 27 37</a>. Tell us who you are and what you want to achieve.</p>
+          <h3 data-i18n="s1.t">Call us</h3>
+          <p data-i18n-html="s1.d">Ring <a href="tel:+998983672737">+998 98 367 27 37</a>. Tell us who you are and what you want to achieve.</p>
         </article>
         <article class="step reveal">
           <span class="dot"></span>
           <span class="num">02</span>
-          <h3>Meet the academy</h3>
-          <p>Visit, meet your teachers and find the right class for your level and your goals.</p>
+          <h3 data-i18n="s2.t">Meet the academy</h3>
+          <p data-i18n="s2.d">Visit, meet your teachers and find the right class for your level and your goals.</p>
         </article>
         <article class="step reveal">
           <span class="dot"></span>
           <span class="num">03</span>
-          <h3>Start learning</h3>
-          <p>Join your group and build strong foundations, one lesson and one step at a time.</p>
+          <h3 data-i18n="s3.t">Start learning</h3>
+          <p data-i18n="s3.d">Join your group and build strong foundations, one lesson and one step at a time.</p>
         </article>
         <article class="step reveal">
           <span class="dot"></span>
           <span class="num">04</span>
-          <h3>Keep growing</h3>
-          <p>Track tasks, deadlines and progress with UniGoal, and keep your next goal in sight.</p>
+          <h3 data-i18n="s4.t">Keep growing</h3>
+          <p data-i18n="s4.d">Track tasks, deadlines and progress with UniGoal, and keep your next goal in sight.</p>
         </article>
       </div>
     </section>
@@ -156,23 +160,19 @@
     <section class="ug" id="unigoal">
       <div class="ug-inner">
         <div class="ug-copy">
-          <p class="kicker light reveal">Powered by</p>
+          <p class="kicker light reveal" data-i18n="powered">Powered by</p>
           <img class="ug-logo reveal" src="assets/unigoal-logo-light.png" alt="UniGoal" width="256" height="66" />
-          <h2 class="reveal">Homework, study<br /><em>and your next step.</em></h2>
-          <p class="ug-lead reveal">
-            UniGoal is the learning platform behind Brooklyn Academy. It brings your education,
-            study plans, university applications and next steps into one place — with
-            <strong>Kiko</strong>, a personal AI guide, by your side.
-          </p>
+          <h2 class="reveal" data-i18n-html="ug.title">Homework, study<br /><em>and your next step.</em></h2>
+          <p class="ug-lead reveal" data-i18n-html="ug.lead">UniGoal is the learning platform behind Brooklyn Academy. It brings your education, study plans, university applications and next steps into one place — with <strong>Kiko</strong>, a personal AI guide, by your side.</p>
           <ul class="ug-list">
-            <li class="reveal ug-hw"><b>Homework &amp; assignments</b> Brooklyn teachers set homework and assignments in UniGoal. Students complete and submit them there, and see their grades and feedback when they are marked.</li>
-            <li class="reveal" style="--d:.08s"><b>Plan</b> Tasks, calendar and focus sessions tied to what is due next.</li>
-            <li class="reveal" style="--d:.16s"><b>Ask Kiko</b> An AI guide for study, majors, applications and careers.</li>
-            <li class="reveal" style="--d:.24s"><b>Discover</b> Search, compare and save universities that fit your goals.</li>
-            <li class="reveal" style="--d:.32s"><b>Progress</b> Earn XP, keep your streak and unlock badges as you learn.</li>
+            <li class="reveal ug-hw" data-i18n-html="ug.hw"><b>Homework &amp; assignments</b> Brooklyn teachers set homework and assignments in UniGoal. Students complete and submit them there, and see their grades and feedback when they are marked.</li>
+            <li class="reveal" style="--d:.08s" data-i18n-html="ug.plan"><b>Plan</b> Tasks, calendar and focus sessions tied to what is due next.</li>
+            <li class="reveal" style="--d:.16s" data-i18n-html="ug.kiko"><b>Ask Kiko</b> An AI guide for study, majors, applications and careers.</li>
+            <li class="reveal" style="--d:.24s" data-i18n-html="ug.discover"><b>Discover</b> Search, compare and save universities that fit your goals.</li>
+            <li class="reveal" style="--d:.32s" data-i18n-html="ug.progress"><b>Progress</b> Earn XP, keep your streak and unlock badges as you learn.</li>
           </ul>
           <a class="btn btn-ug reveal" href="https://unigoal-flax.vercel.app/" target="_blank" rel="noopener">
-            Open UniGoal <span aria-hidden="true">↗</span>
+            <span data-i18n="ug.open">Open UniGoal</span> <span aria-hidden="true">↗</span>
           </a>
         </div>
 
@@ -185,95 +185,96 @@
           <div class="proto-body">
             <aside class="proto-side">
               <img class="side-logo" src="assets/unigoal-logo-light.png" alt="" width="256" height="66" />
-              <button class="ptab active" data-tab="home">Home</button>
-              <button class="ptab" data-tab="hw">Homework</button>
+              <button class="ptab active" data-tab="home" data-i18n="pt.home">Home</button>
+              <button class="ptab" data-tab="hw" data-i18n="pt.hw">Homework</button>
               <button class="ptab" data-tab="kiko">Kiko</button>
-              <button class="ptab" data-tab="uni">Universities</button>
+              <button class="ptab" data-tab="uni" data-i18n="pt.uni">Universities</button>
             </aside>
             <div class="proto-main">
               <!-- Home -->
               <div class="pview active" data-view="home">
-                <p class="p-hello">Good evening, Alex</p>
-                <p class="p-sub">Let's take the next step toward your goal.</p>
+                <p class="p-hello" data-i18n="ph.hello">Good evening, Alex</p>
+                <p class="p-sub" data-i18n="ph.sub">Let's take the next step toward your goal.</p>
                 <div class="p-stats">
-                  <div><small>Tasks completed</small><strong>3 / 6</strong><span class="bar"><i style="--w:50%"></i></span></div>
-                  <div><small>Upcoming deadlines</small><strong>7</strong><span class="bar"><i style="--w:70%"></i></span></div>
+                  <div><small data-i18n="ph.tasks">Tasks completed</small><strong>3 / 6</strong><span class="bar"><i style="--w:50%"></i></span></div>
+                  <div><small data-i18n="ph.deadlines">Upcoming deadlines</small><strong>7</strong><span class="bar"><i style="--w:70%"></i></span></div>
                 </div>
                 <div class="p-stages">
-                  <div class="done"><b>Get In</b><small>Complete</small></div>
-                  <div class="now"><b>Get Ready</b><small>In progress</small></div>
-                  <div><b>Move Forward</b><small>Up next</small></div>
+                  <div class="done"><b data-i18n="ph.st1">Get In</b><small data-i18n="ph.st1s">Complete</small></div>
+                  <div class="now"><b data-i18n="ph.st2">Get Ready</b><small data-i18n="ph.st2s">In progress</small></div>
+                  <div><b data-i18n="ph.st3">Move Forward</b><small data-i18n="ph.st3s">Up next</small></div>
                 </div>
-                <p class="p-label">Today's priorities</p>
+                <p class="p-label" data-i18n="ph.prio">Today's priorities</p>
                 <ul class="p-tasks">
-                  <li><span class="chk on"></span>Calculus homework</li>
-                  <li><span class="chk"></span>English vocabulary</li>
+                  <li><span class="chk on"></span><span data-i18n="ph.t1">Calculus homework</span></li>
+                  <li><span class="chk"></span><span data-i18n="ph.t2">English vocabulary</span></li>
                 </ul>
               </div>
               <!-- Homework -->
               <div class="pview" data-view="hw">
-                <p class="p-hello">Homework <span class="pill">Brooklyn Academy</span></p>
-                <p class="p-sub">Assignments from your teachers, all in one place.</p>
+                <p class="p-hello"><span data-i18n="pt.hw">Homework</span> <span class="pill">Brooklyn Academy</span></p>
+                <p class="p-sub" data-i18n="hw.sub">Assignments from your teachers, all in one place.</p>
                 <div class="hw">
                   <div class="hw-row">
                     <span class="chk on"></span>
-                    <div><b>Essay: My future university</b><small>English · Submitted</small></div>
+                    <div><b data-i18n="hw.1">Essay: My future university</b><small data-i18n="hw.1s">English · Submitted</small></div>
                     <span class="tag graded">9 / 10</span>
                   </div>
                   <div class="hw-row">
                     <span class="chk on"></span>
-                    <div><b>Algebra worksheet 4</b><small>Maths · Submitted today</small></div>
-                    <span class="tag sent">Submitted</span>
+                    <div><b data-i18n="hw.2">Algebra worksheet 4</b><small data-i18n="hw.2s">Maths · Submitted today</small></div>
+                    <span class="tag sent" data-i18n="hw.sent">Submitted</span>
                   </div>
                   <div class="hw-row">
                     <span class="chk"></span>
-                    <div><b>Vocabulary unit 7</b><small>English · Due tomorrow</small></div>
-                    <span class="tag due">Due</span>
+                    <div><b data-i18n="hw.3">Vocabulary unit 7</b><small data-i18n="hw.3s">English · Due tomorrow</small></div>
+                    <span class="tag due" data-i18n="hw.due">Due</span>
                   </div>
                 </div>
-                <div class="hw-submit"><span class="upl">↑</span> Upload your work and submit</div>
+                <div class="hw-submit"><span class="upl">↑</span> <span data-i18n="hw.upload">Upload your work and submit</span></div>
               </div>
               <!-- Kiko -->
               <div class="pview" data-view="kiko">
-                <p class="p-hello">Kiko <span class="pill">University Advisor</span></p>
+                <p class="p-hello">Kiko <span class="pill" data-i18n="kiko.role">University Advisor</span></p>
                 <div class="chat">
-                  <div class="msg me">Which majors fit someone who loves maths and design?</div>
-                  <div class="msg ai">Great mix! Look at <b>architecture</b>, <b>industrial design</b> and <b>computer science</b>. Want me to add a few universities for each to your list?</div>
-                  <div class="msg me">Yes, please.</div>
+                  <div class="msg me" data-i18n="kiko.q">Which majors fit someone who loves maths and design?</div>
+                  <div class="msg ai" data-i18n-html="kiko.a">Great mix! Look at <b>architecture</b>, <b>industrial design</b> and <b>computer science</b>. Want me to add a few universities for each to your list?</div>
+                  <div class="msg me" data-i18n="kiko.yes">Yes, please.</div>
                   <div class="msg ai typing"><span></span><span></span><span></span></div>
                 </div>
               </div>
               <!-- Universities -->
               <div class="pview" data-view="uni">
-                <p class="p-hello">Universities</p>
-                <div class="p-search">Search universities…</div>
-                <div class="uni"><div><b>NYU</b><small>USA · Sample data</small></div><span class="score" style="--s:69">69%</span></div>
-                <div class="uni"><div><b>Purdue</b><small>USA · Sample data</small></div><span class="score" style="--s:79">79%</span></div>              </div>
+                <p class="p-hello" data-i18n="pt.uni">Universities</p>
+                <div class="p-search" data-i18n="uni.search">Search universities…</div>
+                <div class="uni"><div><b>NYU</b><small data-i18n="uni.sample">USA · Sample data</small></div><span class="score">69%</span></div>
+                <div class="uni"><div><b>Purdue</b><small data-i18n="uni.sample">USA · Sample data</small></div><span class="score">79%</span></div>
+              </div>
             </div>
           </div>
-          <p class="proto-note">Prototype preview · sample student data</p>
+          <p class="proto-note" data-i18n="proto.note">Prototype preview · sample student data</p>
         </div>
       </div>
     </section>
 
     <!-- CONTACT -->
     <section class="contact" id="contact">
-      <p class="kicker reveal">Contact</p>
-      <h2 class="reveal">Start today.</h2>
+      <p class="kicker reveal" data-i18n="nav.contact">Contact</p>
+      <h2 class="reveal" data-i18n="contact.title">Start today.</h2>
       <div class="cards">
         <a class="card reveal" href="tel:+998983672737">
-          <span class="label">Join the academy</span>
+          <span class="label" data-i18n="contact.join">Join the academy</span>
           <span class="phone">+998 98 367 27 37</span>
           <span class="arrow" aria-hidden="true">→</span>
         </a>
         <a class="card reveal" style="--d:.1s" href="tel:+998880754010">
-          <span class="label">Technical Support</span>
+          <span class="label" data-i18n="contact.support">Technical Support</span>
           <span class="phone">+998 88 075 40 10</span>
           <span class="arrow" aria-hidden="true">→</span>
         </a>
       </div>
       <p class="support-note reveal">
-        Technical Support for UniGoal ·
+        <span data-i18n="contact.note">Technical Support for UniGoal</span> ·
         <a href="https://unigoal-flax.vercel.app/" target="_blank" rel="noopener">unigoal-flax.vercel.app ↗</a>
       </p>
     </section>
@@ -281,7 +282,7 @@
 
   <footer class="footer">
     <div class="powered reveal">
-      <span class="powered-label">Powered by</span>
+      <span class="powered-label" data-i18n="powered">Powered by</span>
       <a class="unigoal" href="https://unigoal-flax.vercel.app/" target="_blank" rel="noopener" aria-label="UniGoal">
         <img src="assets/unigoal-logo.png" alt="UniGoal" width="256" height="66" />
         <span class="shine" aria-hidden="true"></span>
@@ -290,6 +291,7 @@
     <p class="copy">© <span id="year"></span> Brooklyn Academy</p>
   </footer>
 
+  <script src="i18n.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
